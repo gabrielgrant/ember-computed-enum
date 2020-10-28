@@ -133,7 +133,7 @@ export default DS.Model.extend(
   computedEnumMixin('gender', 'genderCode', genderEnum),
   {
     name: DS.attr('string'),
-    genderCode: DS.attr('number')
+    genderCode: DS.attr('string')
   }
 );
 ```
