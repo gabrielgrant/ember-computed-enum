@@ -37,7 +37,7 @@ o.get('myEnumIsBar');  // -> false
 o.get('myEnumIsBaz');  // -> false
 ```
 
-In cases where the 'enumNameIsValue` properties aren't needed,
+In cases where the `enumNameIsValue` properties aren't needed,
 the addon can also be used...
 
 ## as a simple property (without `enumNameIsValue` properties)
@@ -103,7 +103,7 @@ we could make `Person.gender` contain the decoded value and store
 the raw, coded version by creating a serializer like this:
 
 ```js
-app/serializers/person.js
+// app/serializers/person.js
 
 import DS from 'ember-data';
 
