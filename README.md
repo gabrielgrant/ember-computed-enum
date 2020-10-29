@@ -16,7 +16,7 @@ For full functionality, use the addon...
 
 ### as a Mixin (with `enumNameIsValue` properties)
 
-```
+```js
 import { computedEnumMixin } from 'ember-computed-enum';
 
 myEnumValues = ['foo', 'bar', 'baz'];
@@ -37,12 +37,12 @@ o.get('myEnumIsBar');  // -> false
 o.get('myEnumIsBaz');  // -> false
 ```
 
-In cases where the 'enumNameIsValue` properties aren't needed,
+In cases where the `enumNameIsValue` properties aren't needed,
 the addon can also be used...
 
 ## as a simple property (without `enumNameIsValue` properties)
 
-```
+```js
 import { computedEnum } from 'ember-computed-enum';
 
 myEnumValues = ['foo', 'bar', 'baz'];
@@ -67,7 +67,7 @@ o.get('myEnumIsBaz');  // -> undefined
 The addon works with any Ember Objects, including ember-data models. To use
 with Ember models, store the raw value of the enum in one field:
 
-```
+```js
 // app/models/person.js
 
 import DS from 'ember-data';
@@ -80,7 +80,7 @@ export default DS.Model.extend({
 
 Then add a computed enum that references the raw value:
 
-```
+```js
 // app/models/person.js
 
 import DS from 'ember-data';
@@ -102,8 +102,8 @@ example, if our API returns a gender code in a field named `gender`,
 we could make `Person.gender` contain the decoded value and store
 the raw, coded version by creating a serializer like this:
 
-```
-app/serializers/person.js
+```js
+// app/serializers/person.js
 
 import DS from 'ember-data';
 
@@ -120,7 +120,7 @@ By default, `ember-computed-enum` assumes enum values are zero-indexed integers 
 but other values can be used by passing in an object mapping enum names to values.
 For example, if "gender" were coded as 'm', 'f', and 'o', your model might look like:
 
-```
+```js
 // app/models/person.js
 
 import DS from 'ember-data';
@@ -133,7 +133,7 @@ export default DS.Model.extend(
   computedEnumMixin('gender', 'genderCode', genderEnum),
   {
     name: DS.attr('string'),
-    genderCode: DS.attr('number')
+    genderCode: DS.attr('string')
   }
 );
 ```
