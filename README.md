@@ -96,6 +96,8 @@ export default DS.Model.extend(
 );
 ```
 
+#### Re-using the existing attribute name
+
 If you want to assign the raw value to a different fieldname than
 that assigned by the API, you can create a simple Serializer. For
 example, if our API returns a gender code in a field named `gender`,
